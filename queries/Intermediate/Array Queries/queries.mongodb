@@ -1,0 +1,85 @@
+// Database: learnDB
+// Collection: courses
+
+// --- 🔹 INTERMEDIATE ---
+
+// 1. Find courses that have "mongodb" in tags
+db.courses.find({ tags: "mongodb" });
+
+// 2. Find courses with BOTH "react" and "javascript" in tags
+db.courses.find({ tags: { $all: ["react", "javascript"] } });
+
+// 3. Find courses with exactly 4 tags
+db.courses.find({ tags: { $size: 4 } });
+
+// 4. Find courses with at least one enrolled student
+db.courses.find({ "studentsEnrolled.0": { $exists: true } });
+
+// 5. Find courses where any enrolled student has progress > 90
+db.courses.find({ "studentsEnrolled.progress": { $gt: 90 } });
+
+// 6. Find courses with a review rating of 5
+db.courses.find({ "reviews.rating": 5 });
+
+// 7. Projection: Show only title and tags
+db.courses.find(
+  {},
+  { title: 1, tags: 1, _id: 0 }
+);
+
+// 8. Find courses that include "ci/cd" OR "cloud" in tags
+db.courses.find({ tags: { $in: ["ci/cd", "cloud"] } });
+
+// 9. Find courses where student "Emma Wilson" is enrolled
+db.courses.find({ "studentsEnrolled.name": "Emma Wilson" });
+
+// 10. Find courses with no reviews
+db.courses.find({ reviews: { $size: 0 } });
+
+// --- 🔹 ADVANCED ---
+
+// 11. Use $elemMatch: Find courses where at least one review has rating=5 AND helpful > 40
+db.courses.find({
+  reviews: {
+    $elemMatch: {
+      rating: 5,
+      helpful: { $gt: 40 }
+    }
+  }
+});
+
+//here we can not use simple filter because rating and helpful are in the same sub-document
+// and we want to match both conditions in the same review document
+
+// 12. Use $elemMatch: Find courses where a student has progress > 90 AND rating >= 4.8
+db.courses.find({
+  studentsEnrolled: {
+    $elemMatch: {
+      progress: { $gt: 90 },
+      rating: { $gte: 4.8 }
+    }
+  }
+});
+
+// 13. Find courses where ANY module has lengthHours > 7
+db.courses.find({ "modules.lengthHours": { $gt: 7 } });
+
+// 14. Use $elemMatch: Find courses where a module has title containing "Kubernetes" AND length > 5
+db.courses.find({
+  modules: {
+    $elemMatch: {
+      title: { $regex: "Kubernetes", $options: "i" },
+      lengthHours: { $gt: 5 }
+    }
+  }
+});
+
+// 15. Projection with slice: Show title and first 2 reviews only
+db.courses.find(
+  {},
+  {
+    title: 1,
+    reviews: { $slice: 2 },
+    _id: 0
+  }
+);

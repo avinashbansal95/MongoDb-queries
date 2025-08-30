@@ -1,0 +1,91 @@
+[
+  {
+    "_id": 1,
+    "title": "Mastering MongoDB",
+    "instructor": "Dr. Alice Chen",
+    "category": "Database",
+    "tags": ["mongodb", "nosql", "database", "aggregation"],
+    "durationWeeks": 8,
+    "price": 120,
+    "isActive": true,
+    "studentsEnrolled": [
+      { "studentId": 101, "name": "John Doe", "progress": 75, "rating": 4.8 },
+      { "studentId": 102, "name": "Jane Smith", "progress": 100, "rating": 5.0 },
+      { "studentId": 103, "name": "Sam Taylor", "progress": 40, "rating": 4.5 }
+    ],
+    "modules": [
+      { "title": "Intro to NoSQL", "lengthHours": 3, "completed": true },
+      { "title": "CRUD Operations", "lengthHours": 5, "completed": true },
+      { "title": "Aggregation Pipeline", "lengthHours": 8, "completed": false },
+      { "title": "Indexing & Performance", "lengthHours": 6, "completed": false }
+    ],
+    "reviews": [
+      { "user": "John", "rating": 5, "comment": "Best course ever!", "helpful": 45 },
+      { "user": "Linda", "rating": 4, "comment": "Well structured", "helpful": 30 }
+    ]
+  },
+  {
+    "_id": 2,
+    "title": "React Frontend Masterclass",
+    "instructor": "Bob Kim",
+    "category": "Frontend",
+    "tags": ["react", "frontend", "javascript", "ui"],
+    "durationWeeks": 6,
+    "price": 95,
+    "isActive": true,
+    "studentsEnrolled": [
+      { "studentId": 104, "name": "Emma Wilson", "progress": 100, "rating": 4.9 },
+      { "studentId": 105, "name": "Noah Clark", "progress": 85, "rating": 4.7 }
+    ],
+    "modules": [
+      { "title": "Components & Props", "lengthHours": 4, "completed": true },
+      { "title": "Hooks", "lengthHours": 6, "completed": true },
+      { "title": "State Management", "lengthHours": 7, "completed": false }
+    ],
+    "reviews": [
+      { "user": "Mike", "rating": 5, "comment": "Cleared all my doubts", "helpful": 60 },
+      { "user": "Zoe", "rating": 4, "comment": "Good pace", "helpful": 20 }
+    ]
+  },
+  {
+    "_id": 3,
+    "title": "DevOps with Docker & Kubernetes",
+    "instructor": "Eva Rodriguez",
+    "category": "DevOps",
+    "tags": ["devops", "docker", "kubernetes", "ci/cd", "cloud"],
+    "durationWeeks": 10,
+    "price": 150,
+    "isActive": false,
+    "studentsEnrolled": [
+      { "studentId": 106, "name": "Lucas Brown", "progress": 60, "rating": 4.6 },
+      { "studentId": 107, "name": "Mia Garcia", "progress": 90, "rating": 4.8 }
+    ],
+    "modules": [
+      { "title": "Docker Basics", "lengthHours": 5, "completed": true },
+      { "title": "Networking", "lengthHours": 4, "completed": true },
+      { "title": "Kubernetes Pods", "lengthHours": 6, "completed": true },
+      { "title": "Scaling & Monitoring", "lengthHours": 7, "completed": false }
+    ],
+    "reviews": [
+      { "user": "Alex", "rating": 4, "comment": "Too fast in k8s section", "helpful": 35 },
+      { "user": "Sara", "rating": 5, "comment": "Excellent labs", "helpful": 50 }
+    ]
+  },
+  {
+    "_id": 4,
+    "title": "Advanced Algorithms",
+    "instructor": "Prof. David Wu",
+    "category": "Programming",
+    "tags": ["algorithms", "dsa", "coding", "javascript"],
+    "durationWeeks": 12,
+    "price": 180,
+    "isActive": true,
+    "studentsEnrolled": [],
+    "modules": [
+      { "title": "Sorting & Searching", "lengthHours": 6, "completed": true },
+      { "title": "Graph Algorithms", "lengthHours": 10, "completed": false },
+      { "title": "Dynamic Programming", "lengthHours": 12, "completed": false }
+    ],
+    "reviews": []
+  }
+]

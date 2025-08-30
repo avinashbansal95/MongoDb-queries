@@ -1,0 +1,68 @@
+[
+  {
+    "_id": 1,
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "age": 28,
+    "city": "New York",
+    "country": "USA",
+    "active": true,
+    "salary": 75000,
+    "tags": ["developer", "frontend", "react"]
+  },
+  {
+    "_id": 2,
+    "name": "Bob Smith",
+    "email": "bob@example.com",
+    "age": 34,
+    "city": "San Francisco",
+    "country": "USA",
+    "active": true,
+    "salary": 95000,
+    "tags": ["developer", "backend", "nodejs"]
+  },
+  {
+    "_id": 3,
+    "name": "Carol White",
+    "email": "carol@example.com",
+    "age": 25,
+    "city": "London",
+    "country": "UK",
+    "active": false,
+    "salary": 65000,
+    "tags": ["designer", "ui", "ux"]
+  },
+  {
+    "_id": 4,
+    "name": "David Brown",
+    "email": "david@example.com",
+    "age": 30,
+    "city": "Sydney",
+    "country": "Australia",
+    "active": true,
+    "salary": 80000,
+    "tags": ["developer", "fullstack", "javascript"]
+  },
+  {
+    "_id": 5,
+    "name": "Eva Green",
+    "email": "eva@example.com",
+    "age": 31,
+    "city": "Berlin",
+    "country": "Germany",
+    "active": true,
+    "salary": 72000,
+    "tags": ["devops", "cloud", "aws"]
+  },
+  {
+    "_id": 6,
+    "name": "Frank Miller",
+    "email": "frank@example.com",
+    "age": 40,
+    "city": "Toronto",
+    "country": "Canada",
+    "active": false,
+    "salary": 88000,
+    "tags": ["manager", "agile", "scrum"]
+  }
+]

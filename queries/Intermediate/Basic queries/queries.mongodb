@@ -1,0 +1,89 @@
+// Database: companyDB
+// Collection: users
+
+// 1. Find all users
+db.users.find();
+
+// 2. Find only active users
+db.users.find({ active: true });
+
+// 3. Find users aged 30 or older
+db.users.find({ age: { $gte: 30 } });
+
+// 4. Find users from USA
+db.users.find({ country: "USA" });
+
+// 5. Find users from USA AND age > 30
+db.users.find({
+  country: "USA",
+  age: { $gt: 30 }
+});
+
+// 6. Find users who are NOT from USA
+db.users.find({ country: { $ne: "USA" } });
+
+// 7. Find users in specific cities (NY, London, Berlin)
+db.users.find({ city: { $in: ["New York", "London", "Berlin"] } });
+
+// 8. Find users NOT in USA or Canada
+db.users.find({ country: { $nin: ["USA", "Canada"] } });
+
+// 9. Logical OR: Active users OR age < 30
+db.users.find({
+  $or: [
+    { active: true },
+    { age: { $lt: 30 } }
+  ]
+});
+
+// 10. Logical AND + NOT: USA-based AND NOT active
+db.users.find({
+  country: "USA",
+  active: { $eq: false }
+});
+
+// 11. Combined: (age > 30 AND active) OR country is UK
+db.users.find({
+  $or: [
+    { 
+      age: { $gt: 30 },
+      active: true
+    },
+    { country: "UK" }
+  ]
+});
+
+// 12. Projection: Only name and email
+db.users.find(
+  {},
+  { name: 1, email: 1, _id: 0 }
+);
+
+// 13. Projection with condition: Name and age of users > 30
+db.users.find(
+  { age: { $gt: 30 } },
+  { name: 1, age: 1, _id: 0 }
+);
+
+// 14. Sort by age (ascending)
+db.users.find().sort({ age: 1 });
+
+// 15. Sort by salary (descending)
+db.users.find().sort({ salary: -1 });
+
+// 16. Limit to 3 users
+db.users.find().limit(3);
+
+// 17. Skip first 2, then get next 3 (pagination)
+db.users.find().skip(2).limit(3);
+
+// 18. Count how many active users
+db.users.count({ active: true });
+
+// 19. Find users with salary between 70k and 90k
+db.users.find({
+  salary: { $gte: 70000, $lte: 90000 }
+});
+
+// 20. Find by email (exact match)
+db.users.find({ email: "alice@example.com" });
